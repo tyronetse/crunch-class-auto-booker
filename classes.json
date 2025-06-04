@@ -1,0 +1,32 @@
+[
+  {
+    "name": "The Ride", 
+    "time": "6:15 pm", 
+    "day": "Monday"
+  },  
+  {
+    "name": "BuildHIIT(HIITZone)",
+    "time": "6:00 pm",
+    "day": "Tuesday"
+  },
+  {
+    "name": "BuildHIIT(HIITZone)",
+    "time": "8:45 am",
+    "day": "Thursday"
+  },   
+  {
+    "name": "Tough Tread",
+    "time": "5:15 pm",
+    "day": "Thursday"
+  },
+  {
+    "name": "CircHIIT (HIITZone)",
+    "time": "8:00 am",
+    "day": "Saturday"
+  },
+  {
+    "name": "The Ride",
+    "time": "9:15 am",
+    "day": "Saturday"
+  }  
+]

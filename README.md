@@ -19,7 +19,7 @@ This Python script automatically books your classes on [https://members.crunch.c
 
 Install Python 3.7 or higher from [https://www.python.org/downloads/](https://www.python.org/downloads/)
 
-Verify your installation:
+Verify installation:
 
 ```bash
 python3 --version
@@ -29,46 +29,48 @@ python3 --version
 
 ### 2. Install Google Chrome
 
-Make sure Chrome is installed on your system:  
+Make sure Chrome is installed:  
 [https://www.google.com/chrome/](https://www.google.com/chrome/)
 
-Install **ChromeDriver** (must match your Chrome version):
+Install **ChromeDriver** (version must match your Chrome browser):
 
 #### On macOS (with Homebrew):
-
 ```bash
 brew install chromedriver
 ```
 
 #### Or download manually:
-
 [https://sites.google.com/a/chromium.org/chromedriver/downloads](https://sites.google.com/a/chromium.org/chromedriver/downloads)
 
 ---
 
-### 3. Install Python Dependencies
+### 3. Create and Activate a Virtual Environment
 
-In the folder where your script is saved, run:
+In the root project folder:
+
+```bash
+python3 -m venv venv
+source venv/bin/activate
+```
+
+Then install all dependencies:
 
 ```bash
 pip install -r requirements.txt
 ```
 
-This installs Selenium, which automates the browser.
-
 ---
 
-### ✅ `requirements.txt` (should be in the same folder)
+## 📄 `requirements.txt`
 
 ```
 selenium
+pytz
 ```
 
 ---
 
 ## 🔐 Edit `credentials.json`
-
-A sample `credentials.json` file is included. Open it and **edit it with your Crunch login details**:
 
 ```json
 {
@@ -77,13 +79,11 @@ A sample `credentials.json` file is included. Open it and **edit it with your Cr
 }
 ```
 
-> ⚠️ Never share this file publicly.
+> ⚠️ Never commit or share this file publicly.
 
 ---
 
 ## 📅 Edit `classes.json`
-
-A sample `classes.json` file is also included. Edit it to list the classes you want to book:
 
 ```json
 [
@@ -100,26 +100,25 @@ A sample `classes.json` file is also included. Edit it to list the classes you w
 ]
 ```
 
-- `name`: Must exactly match the class name shown on Crunch
-- `time`: Class start time (e.g., `"5:30 pm"`)
-- `day`: Day of the week the class occurs (e.g., `"Wednesday"`)
+- `name`: Must match the Crunch class title exactly
+- `time`: Use the same format shown on Crunch (e.g., `"5:30 pm"`)
+- `day`: Day of the week (e.g., `"Wednesday"`)
 
 ---
 
-## 🏃‍♂️ Run the Script
+## 🏃 Run the Script
 
-Use the following command:
+With the virtual environment active:
 
 ```bash
 python book_crunch_classes.py
 ```
 
-You’ll see logs like:
+Example output:
 
 ```
 📅 Class to book: BuildHIIT(HIITZone) at 6:00 pm on Tuesday
 ⏳ Booking will happen at Monday 08:00 PM
-🚀 Launching browser...
 🔐 Logging in...
 🎉 Class reserved successfully!
 ```
@@ -128,12 +127,12 @@ You’ll see logs like:
 
 ## ⛔ Stop the Script
 
-Press `Ctrl + C` in the terminal to stop it manually.
+Use `Ctrl + C` in the terminal.
 
 ---
 
 ## 🛠 Troubleshooting
 
-- **Login timed out**: Double-check `credentials.json` and your internet.
-- **Class not found**: The class name or time might not match what Crunch displays.
-- **Chromedriver version mismatch**: Make sure ChromeDriver matches your installed Chrome browser version.
+- **Login timed out**: Check `credentials.json` and internet
+- **Class not found**: Double-check class name, time, and day
+- **Chromedriver issues**: Ensure it matches your Chrome version

@@ -125,6 +125,40 @@ Example output:
 
 ---
 
+
+---
+
+### 🖥 Run with Shell Script (Recommended)
+
+You can automate script startup using the provided shell script:
+
+1. **Create the file** `run_crunch_booker.sh` in the root directory:
+
+```bash
+#!/bin/bash
+
+# Activate virtual environment
+source ~/venvs/selenium-env/bin/activate
+
+# Run the booking script
+python book_crunch_classes.py
+```
+
+2. **Make it executable**:
+
+```bash
+chmod +x run_crunch_booker.sh
+```
+
+3. **Run the script**:
+
+```bash
+./run_crunch_booker.sh
+```
+
+This will activate the Python environment and launch the booking script automatically.
+
+
 ## ⛔ Stop the Script
 
 Use `Ctrl + C` in the terminal.
